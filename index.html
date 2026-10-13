@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>TinyMCE Live Preview</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="preview.css" />
+</head>
+<body>
+	<main class="shell">
+		<section class="hero">
+			<div>
+				<h1>TinyMCE editor with live preview</h1>
+				<p>Type on the left and see the rendered content update instantly on the right. Use the source code button in the toolbar for HTML editing.</p>
+			</div>
+		</section>
+
+		<section class="workspace">
+			<article class="panel">
+				<div class="panel-header">
+					<div>
+						<h2>Editor</h2>
+						<span>Rich text + source code</span>
+					</div>
+				</div>
+				<div id="editor">
+					<textarea id="visual-editor" aria-label="Visual editor"></textarea>
+				</div>
+			</article>
+
+			<article class="panel preview-wrapper">
+				<div class="panel-header">
+					<h2>Preview</h2>
+					<span>Rendered output</span>
+				</div>
+				<div class="preview" id="preview">
+					<div class="preview-shell">
+						<div class="lint-summary" id="lint-summary">
+							<strong>No issues found</strong>
+							<p>Keep typing. The preview will flag unsupported formatting and content problems in real time.</p>
+						</div>
+						<div class="lint-list" id="lint-issues"></div>
+						<div class="preview-content" id="preview-content">
+							<div class="empty">Your formatted content will appear here as you type.</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="script.js"></script>
+</body>
+</html>
